@@ -17,5 +17,5 @@ RUN mkdir /lol
 WORKDIR /lol
 COPY start.sh /start.sh
 
-#Running Radio Player Bot
+#Running Radio Player Bo
 CMD ["/bin/bash", "/start.sh"]
