@@ -1,18 +1,13 @@
-# Python Based Docker
-FROM python:latest
+FROM debian:latest
 
 RUN apt update && apt upgrade -y
-
-#Installing Requirements
 RUN apt install git curl python3-pip ffmpeg -y
-
-#Updating Pip
 RUN pip3 install -U pip
-
-#Copying Requirements
-COPY requirements.txt /requirements.txt
-RUN cd /
+RUN curl -sL https://deb.nodesource.com/setup_15.x | bash -
+RUN apt-get install -y nodejs
+RUN npm i -g npm
+RUN mkdir /app/
+WORKDIR /app/
+COPY . /app/
 RUN pip3 install -U -r requirements.txt
-RUN mkdir /lol
-WORKDIR /lol
 CMD python3 main.py
