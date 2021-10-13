@@ -1,4 +1,3 @@
-  
 echo "Cloning Repo, Please Wait..."
 git clone https://github.com/asangabro/lol.git /lol
 cd /lol
