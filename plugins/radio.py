@@ -29,7 +29,7 @@ GROUP_CALLS = {}
 FFMPEG_PROCESSES = {}
 
 
-@Client.on_message(filters.chat(CHAT_NAME)
+@Client.on_message(filters.chat("Seesan_Ticket", "HuBOFMusic")
                    & filters.user(ADMIN)
                    & filters.command('start', prefixes='!'))
 async def start(client, message: Message):
