@@ -29,9 +29,7 @@ GROUP_CALLS = {}
 FFMPEG_PROCESSES = {}
 
 
-@Client.on_message(filters.chat("Seesan_Ticket", "HuBOFMusic")
-                   & filters.user(ADMIN)
-                   & filters.command('start', prefixes='!'))
+@Client.on_message(filters.user(ADMIN) & filters.command('start', prefixes='!'))
 async def start(client, message: Message):
     input_filename = f'radio-{message.chat.id}.raw'
 
@@ -79,8 +77,7 @@ async def start(client, message: Message):
     await message.reply_text(f'Radio #{station_id} is Playing...')
 
 
-@Client.on_message(filters.chat(CHAT_NAME)
-                   & filters.user(ADMIN)
+@Client.on_message(filters.user(ADMIN)
                    & filters.command('stop', prefixes='!'))
 async def stop(_, message: Message):
     group_call = GROUP_CALLS.get(message.chat.id)
