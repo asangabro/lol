@@ -17,7 +17,7 @@ RUN cd /
 RUN pip3 install -U -r requirements.txt
 RUN mkdir /lol
 WORKDIR /lol
-COPY main.py /main.py
+COPY start.sh /start.sh
 
 # Running Radio Player Bot
-CMD python3 main.py
+CMD ["/bin/bash", "/start.sh"]
